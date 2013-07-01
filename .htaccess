@@ -1,0 +1,10 @@
+Options	-Indexes -MultiViews
+
+RewriteEngine On
+RewriteBase	/
+
+RewriteCond	%{REQUEST_FILENAME}	!-f
+RewriteCond	%{REQUEST_FILENAME}	!-d
+RewriteRule	^	index.php	[L,NS]
+
+#Your previous rule might be triggering a multiview / Directory Index subquery. It's safer to eliminate these possibilities if you don't use them.
